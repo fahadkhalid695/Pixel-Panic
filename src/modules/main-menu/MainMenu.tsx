@@ -1,23 +1,14 @@
 import './main-menu.css';
+import { navigationItems, type NavigationTarget } from '@/modules/navigation/navigation';
 
 type MainMenuProps = {
-  onNavigate: (screen: 'play' | 'create-room' | 'ranked' | 'party' | 'inventory' | 'friends' | 'leaderboards' | 'settings') => void;
+  onNavigate: (screen: NavigationTarget) => void;
 };
 
 const featuredStats = [
   { label: 'Rank', value: 'Nova III' },
   { label: 'Queue', value: 'Arena Clash' },
   { label: 'Party', value: 'Solo Ready' }
-];
-
-const navigationItems = [
-  { label: 'Play', screen: 'play' as const },
-  { label: 'Ranked', screen: 'ranked' as const },
-  { label: 'Party', screen: 'party' as const },
-  { label: 'Inventory', screen: 'inventory' as const },
-  { label: 'Friends', screen: 'friends' as const },
-  { label: 'Leaderboards', screen: 'leaderboards' as const },
-  { label: 'Settings', screen: 'settings' as const }
 ];
 
 export function MainMenu({ onNavigate }: MainMenuProps) {
@@ -60,7 +51,7 @@ export function MainMenu({ onNavigate }: MainMenuProps) {
 
         <nav className="menu-grid">
           {navigationItems.map((item) => (
-            <button key={item.label} className="menu-button" type="button" onClick={() => onNavigate(item.screen)}>
+            <button key={item.label} className="menu-button" type="button" onClick={() => onNavigate(item.target)}>
               {item.label}
             </button>
           ))}

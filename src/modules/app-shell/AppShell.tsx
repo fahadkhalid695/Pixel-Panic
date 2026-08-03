@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import { MainMenu } from '@/modules/main-menu/MainMenu';
+import type { NavigationTarget } from '@/modules/navigation/navigation';
 import './app-shell.css';
 
 type ShellScreen =
   | 'menu'
-  | 'play'
-  | 'create-room'
-  | 'ranked'
-  | 'party'
-  | 'inventory'
-  | 'friends'
-  | 'leaderboards'
-  | 'settings';
+  | NavigationTarget
+  | 'create-room';
 
 const screenCopy: Record<Exclude<ShellScreen, 'menu'>, { title: string; body: string }> = {
   play: {
