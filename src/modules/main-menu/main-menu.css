@@ -1,0 +1,230 @@
+.main-menu-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.9fr);
+  gap: 24px;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top, rgba(66, 232, 245, 0.14), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(255, 93, 122, 0.12), transparent 28%),
+    linear-gradient(180deg, #0c1020 0%, #090d18 100%);
+  color: #f4f7ff;
+}
+
+.hero-panel,
+.menu-panel {
+  border: 1px solid rgba(168, 179, 214, 0.18);
+  border-radius: 24px;
+  background: rgba(21, 28, 51, 0.9);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+.hero-panel {
+  display: grid;
+  align-content: space-between;
+  gap: 24px;
+  padding: 40px;
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.eyebrow,
+.menu-title,
+.news-kicker,
+.stat-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #aab3d6;
+}
+
+.title {
+  margin: 12px 0 16px;
+  font-size: clamp(2.8rem, 5vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  max-width: 12ch;
+}
+
+.description {
+  max-width: 54ch;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #c6ceea;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: rgba(12, 16, 32, 0.7);
+  border: 1px solid rgba(66, 232, 245, 0.18);
+}
+
+.stat-value {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.primary-action,
+.secondary-action,
+.menu-button {
+  border: 0;
+  border-radius: 16px;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease;
+}
+
+.primary-action,
+.secondary-action {
+  min-height: 56px;
+  padding: 0 22px;
+  font-weight: 700;
+}
+
+.primary-action {
+  background: linear-gradient(135deg, #42e8f5, #57f287);
+  color: #07111c;
+  box-shadow: 0 16px 30px rgba(66, 232, 245, 0.22);
+}
+
+.secondary-action {
+  background: rgba(255, 255, 255, 0.04);
+  color: #f4f7ff;
+  border: 1px solid rgba(168, 179, 214, 0.22);
+}
+
+.primary-action:hover,
+.secondary-action:hover,
+.menu-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-action:focus-visible,
+.secondary-action:focus-visible,
+.menu-button:focus-visible {
+  outline: 2px solid #ffd84d;
+  outline-offset: 2px;
+}
+
+.menu-panel {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-status {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #07111c;
+  background: linear-gradient(135deg, #57f287, #42e8f5);
+}
+
+.menu-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.menu-button {
+  min-height: 52px;
+  padding: 0 18px;
+  text-align: left;
+  background: rgba(12, 16, 32, 0.72);
+  color: #f4f7ff;
+  border: 1px solid rgba(168, 179, 214, 0.15);
+}
+
+.menu-button:hover {
+  border-color: rgba(66, 232, 245, 0.38);
+  background: rgba(34, 48, 86, 0.84);
+}
+
+.news-panel {
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(107, 124, 255, 0.18), rgba(12, 16, 32, 0.9));
+  border: 1px solid rgba(107, 124, 255, 0.24);
+}
+
+.news-title {
+  display: block;
+  margin: 8px 0 10px;
+  font-size: 1.1rem;
+}
+
+.news-copy {
+  margin: 0;
+  color: #c6ceea;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .main-menu-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-menu-shell {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .hero-panel,
+  .menu-panel {
+    border-radius: 20px;
+  }
+
+  .hero-panel {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: clamp(2.3rem, 11vw, 3.8rem);
+  }
+
+  .action-row {
+    flex-direction: column;
+  }
+
+  .primary-action,
+  .secondary-action,
+  .menu-button {
+    width: 100%;
+  }
+}
