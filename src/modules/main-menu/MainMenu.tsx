@@ -1,5 +1,9 @@
 import './main-menu.css';
 
+type MainMenuProps = {
+  onNavigate: (screen: 'play' | 'create-room' | 'ranked' | 'party' | 'inventory' | 'friends' | 'leaderboards' | 'settings') => void;
+};
+
 const featuredStats = [
   { label: 'Rank', value: 'Nova III' },
   { label: 'Queue', value: 'Arena Clash' },
@@ -7,16 +11,16 @@ const featuredStats = [
 ];
 
 const navigationItems = [
-  'Play',
-  'Ranked',
-  'Party',
-  'Inventory',
-  'Friends',
-  'Leaderboards',
-  'Settings'
+  { label: 'Play', screen: 'play' as const },
+  { label: 'Ranked', screen: 'ranked' as const },
+  { label: 'Party', screen: 'party' as const },
+  { label: 'Inventory', screen: 'inventory' as const },
+  { label: 'Friends', screen: 'friends' as const },
+  { label: 'Leaderboards', screen: 'leaderboards' as const },
+  { label: 'Settings', screen: 'settings' as const }
 ];
 
-export function MainMenu() {
+export function MainMenu({ onNavigate }: MainMenuProps) {
   return (
     <main className="main-menu-shell">
       <section className="hero-panel">
@@ -39,10 +43,10 @@ export function MainMenu() {
         </div>
 
         <div className="action-row">
-          <button className="primary-action" type="button">
+          <button className="primary-action" type="button" onClick={() => onNavigate('play')}>
             Play Now
           </button>
-          <button className="secondary-action" type="button">
+          <button className="secondary-action" type="button" onClick={() => onNavigate('create-room')}>
             Create Room
           </button>
         </div>
@@ -56,8 +60,8 @@ export function MainMenu() {
 
         <nav className="menu-grid">
           {navigationItems.map((item) => (
-            <button key={item} className="menu-button" type="button">
-              {item}
+            <button key={item.label} className="menu-button" type="button" onClick={() => onNavigate(item.screen)}>
+              {item.label}
             </button>
           ))}
         </nav>

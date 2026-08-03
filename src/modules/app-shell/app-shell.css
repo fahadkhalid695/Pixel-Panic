@@ -1,0 +1,62 @@
+.shell-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top, rgba(66, 232, 245, 0.12), transparent 30%),
+    linear-gradient(180deg, #0c1020 0%, #090d18 100%);
+}
+
+.shell-card {
+  width: min(760px, 100%);
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(168, 179, 214, 0.18);
+  background: rgba(21, 28, 51, 0.92);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.shell-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aab3d6;
+  font-size: 0.8rem;
+}
+
+.shell-title {
+  margin: 12px 0 16px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.95;
+}
+
+.shell-copy {
+  margin: 0;
+  max-width: 54ch;
+  color: #c6ceea;
+  line-height: 1.65;
+}
+
+.shell-actions {
+  margin-top: 24px;
+}
+
+.shell-primary {
+  min-height: 54px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #42e8f5, #57f287);
+  color: #07111c;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.shell-primary:focus-visible {
+  outline: 2px solid #ffd84d;
+  outline-offset: 2px;
+}

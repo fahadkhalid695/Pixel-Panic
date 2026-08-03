@@ -1,5 +1,5 @@
-import { MainMenu } from '@/modules/main-menu/MainMenu';
+import { AppShell } from '@/modules/app-shell/AppShell';
 
 export function App() {
-  return <MainMenu />;
+  return <AppShell />;
 }
